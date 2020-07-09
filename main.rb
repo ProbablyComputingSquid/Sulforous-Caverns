@@ -23,13 +23,16 @@ def underline;      "\e[4m#{self}\e[24m" end
 def blink;          "\e[5m#{self}\e[25m" end
 def reverse_color;  "\e[7m#{self}\e[27m" end
 end
-
-#require 'gosu'
-#later
+=begin
+require 'gosu'
+require_relative 'level'
+require_relative 'player'
+=end
 
 
 printf "WELCOME TO".green.bg_red
 sleep 2
+
 
 puts " THE SULFOROUS CAVERNS".green.bg_red
 
@@ -62,13 +65,32 @@ else
    
 
   if bLoop == 'YES'
-    puts "you rush in and are now indside"
+    puts "you rush in and are now inside"
   else
-    puts "An arrow strikes you in the back."
-    puts "You fall to the ground, in agony"
-    puts "You died."
+    puts "An arrow strikes you in the back.".red
+    puts "You fall to the ground, in agony".red
+    puts "You died.".red
     puts ""
-    nil
+    
   end
+end
+
+
+
+puts "Inside the sulforous caverns, you observe that there are some curious markings on the floor.".red
+
+puts "Do you (i)nspect or (m)ove on".red
+
+
+
+b = gets.chomp.upcase
+
+if b == 'I' or 'i'
+ puts "The markings are of some sort of ritual.".red
+ puts "perhaps for sommoning an ancient deity.".red
+elsif b == 'M' or 'm'
+  puts "Do you go to the (l)eft, to the (r)ight or (f)orward."
+else
+  puts "whaa"
 end
 
